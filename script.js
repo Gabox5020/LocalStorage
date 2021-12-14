@@ -5,8 +5,17 @@ function iniciar() {
     var btnAgregar = document.getElementById("btnAgregar");
     btnAgregar.addEventListener("click", clickBtnAgregar)
 
+    // Boton Borrar escucha el Click
+    var btnBorrar = document.getElementById("btnBorrar");
+    btnBorrar.addEventListener("click", clickBtnBorrar)
+
+
     // Renderizar la nota
     mostrarNotas();
+}
+
+function clickBtnBorrar() {
+    alert(13123123)
 }
 
 function clickBtnAgregar() {
@@ -34,7 +43,7 @@ function mostrarNotas() {
     if (localStorage.notas) {
         notas = JSON.parse(localStorage.notas);
     }
-    
+
     var html ="";
     for (var nota of notas) {
         html += nota + "<br/>"
