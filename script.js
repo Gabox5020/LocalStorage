@@ -13,8 +13,16 @@ function clickBtnAgregar() {
     // Traemos txtNota
     var txtNota = document.getElementById("txtNota");
 
-    // Queda asignado al localStorage
-    localStorage.nota = txtNota.value;
+
+    
+    var notas = [];
+    if (localStorage.notas) {
+        notas = JSON.parse(localStorage.notas);
+    }
+    
+
+    notas.push(txtNota.value);
+    localStorage.notas = JSON.stringify(notas);
     mostrarNotas();
 }
 
@@ -22,5 +30,14 @@ function mostrarNotas() {
     // Trae el Div Notas
     var divNotas = document.getElementById("divNotas");
     // Le asigna las notas desde el LocalStorage
-    divNotas.innerHTML = localStorage.nota;
+    var notas = [];
+    if (localStorage.notas) {
+        notas = JSON.parse(localStorage.notas);
+    }
+    
+    var html ="";
+    for (var nota of notas) {
+        html += nota + "<br/>"
+    }
+    divNotas.innerHTML = html;
 }
