@@ -15,7 +15,8 @@ function iniciar() {
 }
 
 function clickBtnBorrar() {
-    alert(13123123)
+    localStorage.clear();
+    mostrarNotas();
 }
 
 function clickBtnAgregar() {
