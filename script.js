@@ -6,5 +6,6 @@ function iniciar() {
 }
 
 function clickBtnAgregar() {
-    alert("CLICK")
+    var txtNota = document.getElementById("txtNota");
+    alert(txtNota.value)
 }
